@@ -25,6 +25,7 @@ public class Windmill extends EnergyGenerator {
 		player.sendMessage("Energy: " + energy);
 	}
 
+	@Override
 	public void onEnergyGenerate(double energy_generated) {
 		
 	}
