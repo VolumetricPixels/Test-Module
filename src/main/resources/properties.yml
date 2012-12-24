@@ -4,6 +4,7 @@ description: hi
 
 author: VP
 website: volumetricpixels.com
+depends: [Vanilla]
 
 main: com.volumetricpixels.testmodule.TestModule
 platform: BOTH
