@@ -18,8 +18,8 @@ public class TestModule extends CommonPlugin {
 	public void onEnable() {
 		
 		RecipeBuilder builder = new RecipeBuilder();
-		builder.setResult(WindmillData.WINDMILL_BLOCK, 1);
-		builder.addRow("D  ");
+		builder.setResult(TestData.WINDMILL_BLOCK, 1);
+		builder.addRow("D");
 		builder.setIngredient('D', VanillaMaterials.DIRT);
 		Spout.getEngine().getRecipeManager().register(builder.buildShapedRecipe());
 		

@@ -21,7 +21,7 @@ public class TMExecutor implements CommandExecutor {
 			if(hit!=null) {
 				p.sendMessage("hi");
 				Block b = hit.getTargetBlock();
-				b.setMaterial(WindmillData.WINDMILL_BLOCK);
+				b.setMaterial(TestData.WINDMILL_BLOCK);
 			}
 		}
 	}
