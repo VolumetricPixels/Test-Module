@@ -1,18 +1,22 @@
 package com.volumetricpixels.testmodule;
 
+import com.volumetricpixels.mcsquared.api.energy.EnergyGenerator;
 import org.spout.api.entity.Player;
 import org.spout.api.inventory.Inventory;
 import org.spout.vanilla.component.inventory.WindowHolder;
 import org.spout.vanilla.inventory.window.block.CraftingTableWindow;
 
-import com.volumetricpixels.mcsquared.api.energy.EnergyGenerator;
-
 public class Windmill extends EnergyGenerator {
-	int energy;
 	
+    private int energy;
+    
+    public Windmill() {
+        final int height = this.getBlock().getPosition().getBlockY();
+        energy = height - (height % 10);
+    }
+	
+    @Override
 	public void onTick(float dt) {
-		final int height = this.getBlock().getPosition().getBlockY();
-		energy = height - (height % 10);
 		onEnergyGenerate(energy);
 	}
 	
@@ -27,7 +31,6 @@ public class Windmill extends EnergyGenerator {
 
 	@Override
 	public void onEnergyGenerate(double energy_generated) {
-		
-	}
-
+        //TODO: Split energy to each connected block
+	}    
 }
