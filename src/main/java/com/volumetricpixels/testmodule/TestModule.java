@@ -13,16 +13,15 @@ public class TestModule extends CommonPlugin {
 
     @Override
 	public void onDisable() {
-		getLogger().info("disabled.");
+		getLogger().info("Test-Module Disabled.");
 	}
 
     @Override
 	public void onEnable() {
 		RecipeBuilder builder = new RecipeBuilder();
 		builder.setResult(TestData.WINDMILL_BLOCK, 1);
-		builder.addRow("D");
-		builder.setIngredient('D', VanillaMaterials.DIRT);
-		Spout.getEngine().getRecipeManager().register(builder.buildShapedRecipe());
+		builder.addIngredient(VanillaMaterials.DIRT);
+		Spout.getEngine().getRecipeManager().register(builder.buildShapelessRecipe());
 		
 		TMExecutor t = new TMExecutor();
 		getEngine().getRootCommand().addSubCommand(this, "+windmill").setArgBounds(0, 0).setExecutor(Platform.CLIENT, t);
@@ -31,6 +30,7 @@ public class TestModule extends CommonPlugin {
 			InputManager input = ((Client) Spout.getEngine()).getInputManager();
 			input.bind(Keyboard.KEY_B, "windmill");
 		}
-		getLogger().info("enabled.");
-	}	
+		getLogger().info("Test-Module Enabled.");
+	}
+	
 }
