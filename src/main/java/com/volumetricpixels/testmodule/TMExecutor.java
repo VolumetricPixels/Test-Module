@@ -16,12 +16,12 @@ public class TMExecutor implements CommandExecutor {
         if (source instanceof Player) {
             Player p = (Player)source;
             if(name.equalsIgnoreCase("+windmill")) {
-                p.sendMessage("hi");
+                p.sendMessage("Windmill command has been executed");
                 HitBlockComponent hit = p.get(HitBlockComponent.class);
-                if(hit!=null) {
-                    p.sendMessage("hi");
+                if(hit != null) {
                     Block b = hit.getTargetBlock();
-                    b.setMaterial(TestData.WINDMILL_BLOCK);
+                    b.setMaterial(TestMaterials.WINDMILL_BLOCK);
+                    p.sendMessage("Block at ", b.getPosition(), " has been set to a 'Windmill'");
                 }
             }
         }		
