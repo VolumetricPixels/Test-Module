@@ -2,14 +2,14 @@ package com.volumetricpixels.testmodule.materials.windmill;
 
 import com.volumetricpixels.mcsquared.api.energy.EnergyReceiver;
 import com.volumetricpixels.mcsquared.api.energy.EnergySource;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import org.spout.api.component.type.BlockComponent;
 
 public class Windmill extends BlockComponent implements EnergySource {
     
-    private int energy;
-    private List<EnergyReceiver> receivers = new ArrayList<EnergyReceiver>();
+    private double energy;
+    protected final Set<EnergyReceiver> receivers = new HashSet<EnergyReceiver>();
 
     @Override
     public void onAttached() {
