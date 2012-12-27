@@ -7,23 +7,25 @@ import java.util.List;
 import org.spout.api.component.type.BlockComponent;
 
 public class Windmill extends BlockComponent implements EnergySource {
+    
     private int energy;
     private List<EnergyReceiver> receivers = new ArrayList<EnergyReceiver>();
 
-
-    public Windmill() {
+    @Override
+    public void onAttached() {
         final int height = this.getPosition().getBlockY();
         energy = height - (height % 10);
     }
 	
     @Override
-	public void onTick(float dt) {
+    public void onTick(float dt) {
         double give = energy/receivers.size();
         for (EnergyReceiver r : receivers) {
             r.onReceive(this, give);
         }
-	}
+    }
 
+    @Override
     public void addReceiver(EnergyReceiver destination) {
         receivers.add(destination);
     }
