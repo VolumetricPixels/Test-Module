@@ -4,6 +4,7 @@ import com.volumetricpixels.mcsquared.api.energy.EnergyHolder;
 import com.volumetricpixels.mcsquared.api.energy.EnergyReceiver;
 
 public class Battery extends EnergyHolder {
+    
     private int energy;
 
     @Override
@@ -13,12 +14,12 @@ public class Battery extends EnergyHolder {
     }
 
     @Override
-	public void onTick(float dt) {
+    public void onTick(float dt) {
         double give = receivers.isEmpty() ? 0 : energy/receivers.size();
         if (give != 0) {
             for (EnergyReceiver r : receivers) {
                 r.onReceive(this, give);
             }
         }
-	}
+    }
 }
