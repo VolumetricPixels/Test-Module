@@ -12,8 +12,8 @@ public class TestMaterials {
     private TestMaterials() {
     }
     
-    public static final WindmillBlock WINDMILL_BLOCK = new WindmillBlock("Windmill", 150);
-    public static final BatteryBlock BATTERY_BLOCK = new BatteryBlock("Battery", 151);
+    public static final WindmillBlock WINDMILL_BLOCK = new WindmillBlock("Windmill");
+    public static final BatteryBlock BATTERY_BLOCK = new BatteryBlock("Battery");
     
     public static void initialise() {
         try {
