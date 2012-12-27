@@ -1,5 +1,6 @@
-package com.volumetricpixels.testmodule;
+package com.volumetricpixels.testmodule.materials.windmill;
 
+import com.volumetricpixels.testmodule.TestData;
 import org.spout.vanilla.material.block.component.ComponentMaterial;
 
 public class WindmillBlock extends ComponentMaterial {
