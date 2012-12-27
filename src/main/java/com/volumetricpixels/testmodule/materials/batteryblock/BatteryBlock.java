@@ -10,7 +10,7 @@ import org.spout.vanilla.material.block.component.ComponentMaterial;
 public class BatteryBlock extends ComponentMaterial implements TestBlockMaterial {
 
 	public BatteryBlock(String name, int id) {
-		super(name, id, Battery.class, "model://Vanilla/materials/block/solid/oakplanks/oakplanks.spm");
+		super(name, id, Battery.class, "model://Test-Module/materials/block/solid/baterry/battery.spm");
 	}
 
     public void initRecipe() {

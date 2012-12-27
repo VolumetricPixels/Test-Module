@@ -1,0 +1,6 @@
+GL30:
+    Vertex: file://Test-Module/shaders/liquid.330.vert
+    Fragment: file://Test-Module/shaders/liquid.330.frag
+GL20:
+    Vertex: file://Test-Module/shaders/liquid.120.vert
+    Fragment: file://Test-Module/shaders/liquid.120.frag

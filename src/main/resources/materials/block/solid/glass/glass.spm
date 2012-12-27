@@ -1,0 +1,2 @@
+Mesh: cubemesh://Test-Module/materials/block/solid/glass/glass.uvs
+Material: material://Test-Module/materials/terrain.smt
