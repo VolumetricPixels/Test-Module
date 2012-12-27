@@ -12,7 +12,6 @@ import org.spout.api.material.ComplexMaterial;
 import org.spout.api.material.Material;
 import org.spout.api.material.block.BlockFace;
 import org.spout.api.math.Vector3;
-import org.spout.vanilla.component.substance.material.VanillaBlockComponent;
 
 public class ComponentMaterial extends BlockMaterial implements ComplexMaterial {
 	private final Class<? extends BlockComponent> componentType;
@@ -43,8 +42,7 @@ public class ComponentMaterial extends BlockMaterial implements ComplexMaterial 
 		if (c == null) {
 			throw new IllegalStateException("Failed to spawn " + componentType.getName() + " at (" + pos.getX() + "," + pos.getY() + "," + pos.getZ() + ")");
 		}
-
-		((VanillaBlockComponent) c).onInteractBy(entity, type, clickedFace);
+		c.onInteract(entity, type);
 	}
 
 	@Override

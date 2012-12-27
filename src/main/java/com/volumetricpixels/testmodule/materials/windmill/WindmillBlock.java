@@ -10,7 +10,7 @@ import org.spout.vanilla.material.VanillaMaterials;
 public class WindmillBlock extends ComponentMaterial implements TestBlockMaterial {
 
 	public WindmillBlock(String name) {
-		super(name, Windmill.class, "model://Test-Module/materials/block/solid/furnace/furnace.spm");
+		super(name, Windmill.class, "model://Vanilla/materials/block/solid/furnace/furnace.spm");
 		//this.getDrops().clear().add(TestMaterials.WINDMILL_BLOCK , 1);
 	}
 

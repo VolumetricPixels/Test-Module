@@ -1,6 +1,0 @@
-GL30:
-    Vertex: file://Test-Module/shaders/terrainBiomeColor.330.vert
-    Fragment: file://Test-Module/shaders/terrainFoliage.330.frag
-GL20:
-    Vertex: file://Test-Module/shaders/terrainBiomeColor.120.vert
-    Fragment: file://Test-Module/shaders/terrainFoliage.120.frag
