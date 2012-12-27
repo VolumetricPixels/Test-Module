@@ -3,6 +3,7 @@ package com.volumetricpixels.testmodule;
 import com.volumetricpixels.testmodule.materials.TestBlockMaterial;
 import com.volumetricpixels.testmodule.materials.batteryblock.BatteryBlock;
 import com.volumetricpixels.testmodule.materials.windmill.WindmillBlock;
+import com.volumetricpixels.testmodule.materials.wire.WireBlock;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import org.spout.api.Spout;
@@ -14,6 +15,7 @@ public class TestMaterials {
     
     public static final WindmillBlock WINDMILL_BLOCK = new WindmillBlock("Windmill");
     public static final BatteryBlock BATTERY_BLOCK = new BatteryBlock("Battery");
+    public static final WireBlock WIRE_BLOCK = new WireBlock("Wire");
     
     public static void initialise() {
         try {

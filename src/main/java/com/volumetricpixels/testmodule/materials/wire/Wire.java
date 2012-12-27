@@ -7,12 +7,7 @@ import java.util.Set;
 import org.spout.api.component.type.BlockComponent;
 import org.spout.vanilla.material.VanillaMaterials;
 
-/**
- * @author thehutch
- */
 public class Wire extends BlockComponent implements EnergyReceiver, EnergySource {
-
-    private double energy;
     private double maxEnergy;
     
     protected final Set<EnergyReceiver> receivers = new HashSet<EnergyReceiver>();
@@ -37,6 +32,6 @@ public class Wire extends BlockComponent implements EnergyReceiver, EnergySource
 
     @Override
     public void addReceiver(EnergyReceiver destination) {
-        
+	    receivers.add(destination);
     }
 }
