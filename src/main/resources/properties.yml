@@ -1,10 +1,10 @@
 name: TestModule
 version: 0.0.1
-description: hi
+description: Test module for MC2.
 
-author: VP
+author: Volumetric Pixels
 website: volumetricpixels.com
-depends: [Vanilla]
+depends: ['Vanilla', 'MCSquared']
 
 main: com.volumetricpixels.testmodule.TestModule
 platform: BOTH
