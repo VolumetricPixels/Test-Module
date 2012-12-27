@@ -9,7 +9,7 @@ import org.spout.vanilla.inventory.window.block.CraftingTableWindow;
 public class Windmill extends EnergyGenerator {
 	
     private int energy;
-    
+
     public Windmill() {
         final int height = this.getBlock().getPosition().getBlockY();
         energy = height - (height % 10);
