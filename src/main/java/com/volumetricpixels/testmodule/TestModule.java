@@ -11,12 +11,13 @@ import org.spout.vanilla.material.VanillaMaterials;
 
 public class TestModule extends CommonPlugin {
 
+    @Override
 	public void onDisable() {
 		getLogger().info("disabled.");
 	}
 
+    @Override
 	public void onEnable() {
-		
 		RecipeBuilder builder = new RecipeBuilder();
 		builder.setResult(TestData.WINDMILL_BLOCK, 1);
 		builder.addRow("D");
@@ -30,8 +31,6 @@ public class TestModule extends CommonPlugin {
 			InputManager input = ((Client) Spout.getEngine()).getInputManager();
 			input.bind(Keyboard.KEY_B, "windmill");
 		}
-			
 		getLogger().info("enabled.");
-	}
-	
+	}	
 }

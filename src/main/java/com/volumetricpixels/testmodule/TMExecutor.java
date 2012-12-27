@@ -11,19 +11,20 @@ import org.spout.api.geo.cuboid.Block;
 
 public class TMExecutor implements CommandExecutor {
 
+    @Override
 	public void processCommand(CommandSource source, Command command, CommandContext args) throws CommandException {
 		String name = command.getPreferredName();
-		Player p = (Player)source;
-		
-		if(name.equalsIgnoreCase("+windmill")) {
-			p.sendMessage("hi");
-			HitBlockComponent hit = p.get(HitBlockComponent.class);
-			if(hit!=null) {
-				p.sendMessage("hi");
-				Block b = hit.getTargetBlock();
-				b.setMaterial(TestData.WINDMILL_BLOCK);
-			}
-		}
+        if (source instanceof Player) {
+            Player p = (Player)source;
+            if(name.equalsIgnoreCase("+windmill")) {
+                p.sendMessage("hi");
+                HitBlockComponent hit = p.get(HitBlockComponent.class);
+                if(hit!=null) {
+                    p.sendMessage("hi");
+                    Block b = hit.getTargetBlock();
+                    b.setMaterial(TestData.WINDMILL_BLOCK);
+                }
+            }
+        }		
 	}
-
 }
