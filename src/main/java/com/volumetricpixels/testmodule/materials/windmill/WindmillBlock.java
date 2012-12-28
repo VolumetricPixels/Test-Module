@@ -14,7 +14,8 @@ public class WindmillBlock extends ComponentMaterial implements TestBlockMateria
 		//this.getDrops().clear().add(TestMaterials.WINDMILL_BLOCK , 1);
 	}
 
-    public void initRecipe() {
+    @Override
+    public void initialise() {
         RecipeBuilder builder = new RecipeBuilder();
         builder.setResult(TestMaterials.WINDMILL_BLOCK, 1);
         builder.addIngredient(VanillaMaterials.DIRT, 1);

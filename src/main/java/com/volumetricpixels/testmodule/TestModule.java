@@ -24,11 +24,7 @@ public class TestModule extends CommonPlugin {
 			InputManager input = ((Client) Spout.getEngine()).getInputManager();
 			input.bind(Keyboard.KEY_B, "windmill");
 		}
-        initRecipes();
+        TestMaterials.initialise();
 		getLogger().info("Test-Module Enabled.");
 	}
-    
-    private void initRecipes() {
-        TestMaterials.initialise();
-    }	
 }

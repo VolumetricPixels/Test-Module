@@ -5,6 +5,6 @@ package com.volumetricpixels.testmodule.materials;
  */
 public interface TestBlockMaterial {
     
-    public void initRecipe();
+    public void initialise();
 
 }

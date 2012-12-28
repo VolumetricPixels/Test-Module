@@ -13,7 +13,8 @@ public class BatteryBlock extends ComponentMaterial implements TestBlockMaterial
 		super(name, Battery.class, "model://Test-Module/materials/block/solid/baterry/battery.spm");
 	}
 
-    public void initRecipe() {
+    @Override
+    public void initialise() {
         RecipeBuilder builder = new RecipeBuilder();
         builder.setResult(TestMaterials.BATTERY_BLOCK, 1);
         builder.addIngredient(VanillaMaterials.BEDROCK);

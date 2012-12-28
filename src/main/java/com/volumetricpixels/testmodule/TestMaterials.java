@@ -24,7 +24,7 @@ public class TestMaterials {
                     Object temp = field.get(null);
                     if (TestBlockMaterial.class.isAssignableFrom(field.getClass())) {
                         TestBlockMaterial mat = (TestBlockMaterial)temp;
-                        mat.initRecipe();
+                        mat.initialise();
                     }
                 }
             }

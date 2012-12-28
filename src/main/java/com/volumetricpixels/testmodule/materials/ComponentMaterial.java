@@ -14,7 +14,8 @@ import org.spout.api.material.block.BlockFace;
 import org.spout.api.math.Vector3;
 
 public class ComponentMaterial extends BlockMaterial implements ComplexMaterial {
-	private final Class<? extends BlockComponent> componentType;
+	
+    private final Class<? extends BlockComponent> componentType;
 
 	public ComponentMaterial(String name, Class<? extends BlockComponent> component, String model) {
 		super((short) 0, name, model);
@@ -54,6 +55,7 @@ public class ComponentMaterial extends BlockMaterial implements ComplexMaterial 
 		return false;
 	}
 
+    @Override
 	public BlockComponent createBlockComponent() {
 		try {
 			return componentType.newInstance();
