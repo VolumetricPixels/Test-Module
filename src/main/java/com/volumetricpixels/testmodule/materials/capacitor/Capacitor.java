@@ -13,6 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Capacitor extends EnergyHolderImpl implements EnergyHolder, EnergyReceiver, EnergySource, MaxEnergyAccess {
+
     private final Set<EnergyReceiver> receivers = new HashSet<EnergyReceiver>();
 
     @Override
@@ -27,7 +28,9 @@ public class Capacitor extends EnergyHolderImpl implements EnergyHolder, EnergyR
 
     @Override
     public void onTick(float dt) {
-        if (receivers.isEmpty()) return;
+        if (receivers.isEmpty()) {
+            return;
+        }
         this.energyHeld = EnergyUtils.safeSplit(this, energyHeld, new HashSet<EnergyNode>(Arrays.asList(this)), receivers);
     }
 
@@ -35,9 +38,14 @@ public class Capacitor extends EnergyHolderImpl implements EnergyHolder, EnergyR
     public Energy onReceive(EnergySource source, Set<EnergyNode> visited, Energy energy) {
         return addEnergy(energy);
     }
-    
+
     @Override
     public void addReceiver(EnergyReceiver receiver) {
         receivers.add(receiver);
+    }
+
+    @Override
+    public void removeReceiver(EnergyReceiver receiver) {
+        receivers.remove(receiver);
     }
 }

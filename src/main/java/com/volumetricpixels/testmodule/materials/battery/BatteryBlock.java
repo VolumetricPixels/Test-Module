@@ -8,15 +8,15 @@ import org.spout.vanilla.material.VanillaMaterials;
 
 public class BatteryBlock extends TestBlockMaterial {
 
-	public BatteryBlock(String name) {
-		super(name, Battery.class, "model://Test-Module/materials/block/solid/baterry/battery.spm");
-	}
+    public BatteryBlock(String name) {
+        super(name, Battery.class, "model://Test-Module/materials/block/solid/baterry/battery.spm");
+    }
 
     @Override
     public void initialise() {
         RecipeBuilder builder = new RecipeBuilder();
         builder.setResult(TestMaterials.BATTERY_BLOCK, 1);
-        builder.addIngredient(VanillaMaterials.BEDROCK);
+        builder.addIngredient(VanillaMaterials.COBBLESTONE);
         Spout.getEngine().getRecipeManager().register(builder.buildShapelessRecipe());
     }
 }

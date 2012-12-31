@@ -8,9 +8,9 @@ import org.spout.vanilla.material.VanillaMaterials;
 
 public class CapacitorBlock extends TestBlockMaterial {
 
-	public CapacitorBlock(String name) {
-		super(name, Capacitor.class, "model://Vanilla/materials/block/solid/furnace/furnace.spm");
-	}
+    public CapacitorBlock(String name) {
+        super(name, Capacitor.class, "model://Vanilla/materials/block/solid/furnace/furnace.spm");
+    }
 
     @Override
     public void initialise() {

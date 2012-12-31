@@ -8,10 +8,10 @@ import org.spout.vanilla.material.VanillaMaterials;
 
 public class WindmillBlock extends TestBlockMaterial {
 
-	public WindmillBlock(String name) {
-		super(name, Windmill.class, "model://Vanilla/materials/block/solid/furnace/furnace.spm");
-		//this.getDrops().clear().add(TestMaterials.WINDMILL_BLOCK , 1);
-	}
+    public WindmillBlock(String name) {
+        super(name, Windmill.class, "model://Vanilla/materials/block/solid/furnace/furnace.spm");
+        //this.getDrops().clear().add(TestMaterials.WINDMILL_BLOCK , 1);
+    }
 
     @Override
     public void initialise() {

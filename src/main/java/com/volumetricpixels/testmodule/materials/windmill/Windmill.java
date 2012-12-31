@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Windmill extends EnergyNodeImpl implements EnergySource {
-    
+
     private Energy energyGenerated;
     private final Set<EnergyReceiver> receivers = new HashSet<EnergyReceiver>();
 
@@ -20,7 +20,7 @@ public class Windmill extends EnergyNodeImpl implements EnergySource {
         final int height = this.getPosition().getBlockY();
         energyGenerated = new Energy(height - (height % 10));
     }
-	
+
     @Override
     public void onTick(float dt) {
         if (receivers.isEmpty()) {
@@ -32,5 +32,10 @@ public class Windmill extends EnergyNodeImpl implements EnergySource {
     @Override
     public void addReceiver(EnergyReceiver destination) {
         receivers.add(destination);
+    }
+    
+    @Override
+    public void removeReceiver(EnergyReceiver receiver) {
+        receivers.remove(receiver);
     }
 }

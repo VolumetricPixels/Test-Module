@@ -12,13 +12,14 @@ import java.util.Set;
 import org.spout.vanilla.material.VanillaMaterials;
 
 public class Wire extends EnergyNodeImpl implements EnergyReceiver, EnergySource, MaxEnergySource {
+
     private Energy maxEnergy;
     private final Set<EnergyReceiver> receivers = new HashSet<EnergyReceiver>();
     
     public Wire() {
         maxEnergy = new Energy(100);
     }
-    
+
     @Override
     public Energy onReceive(EnergySource source, Set<EnergyNode> visited, Energy energy) {
         if (maxEnergy.compareTo(energy) > 0) {
@@ -32,7 +33,7 @@ public class Wire extends EnergyNodeImpl implements EnergyReceiver, EnergySource
 
     @Override
     public void addReceiver(EnergyReceiver destination) {
-	    receivers.add(destination);
+        receivers.add(destination);
     }
 
     public Energy getMaxEnergy() {
@@ -41,5 +42,10 @@ public class Wire extends EnergyNodeImpl implements EnergyReceiver, EnergySource
 
     public void setMaxEnergy(Energy maxEnergy) {
         this.maxEnergy = maxEnergy;
+    }
+    
+    @Override
+    public void removeReceiver(EnergyReceiver receiver) {
+        receivers.remove(receiver);
     }
 }

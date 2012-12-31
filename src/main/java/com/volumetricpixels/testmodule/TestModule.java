@@ -10,21 +10,21 @@ import org.spout.api.plugin.Platform;
 public class TestModule extends CommonPlugin {
 
     @Override
-	public void onDisable() {
-		getLogger().info("Test-Module Disabled.");
-	}
+    public void onDisable() {
+        getLogger().info("Test-Module Disabled.");
+    }
 
     @Override
-	public void onEnable() {
-	
-		TMExecutor t = new TMExecutor();
-		getEngine().getRootCommand().addSubCommand(this, "+windmill").setArgBounds(0, 0).setExecutor(Platform.CLIENT, t);
-		
-		if (Spout.getPlatform() == Platform.CLIENT) {
-			InputManager input = ((Client) Spout.getEngine()).getInputManager();
-			input.bind(Keyboard.KEY_B, "windmill");
-		}
+    public void onEnable() {
+
+        TMExecutor t = new TMExecutor();
+        getEngine().getRootCommand().addSubCommand(this, "+windmill").setArgBounds(0, 0).setExecutor(Platform.CLIENT, t);
+
+        if (Spout.getPlatform() == Platform.CLIENT) {
+            InputManager input = ((Client) Spout.getEngine()).getInputManager();
+            input.bind(Keyboard.KEY_B, "windmill");
+        }
         TestMaterials.initialise();
-		getLogger().info("Test-Module Enabled.");
-	}
+        getLogger().info("Test-Module Enabled.");
+    }
 }
