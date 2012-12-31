@@ -1,4 +1,4 @@
-package com.volumetricpixels.testmodule.materials.batteryblock;
+package com.volumetricpixels.testmodule.materials.battery;
 
 import com.volumetricpixels.testmodule.TestMaterials;
 import com.volumetricpixels.testmodule.materials.TestBlockMaterial;

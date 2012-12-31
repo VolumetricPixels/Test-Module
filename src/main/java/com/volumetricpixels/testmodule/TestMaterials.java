@@ -1,7 +1,8 @@
 package com.volumetricpixels.testmodule;
 
 import com.volumetricpixels.testmodule.materials.TestBlockMaterial;
-import com.volumetricpixels.testmodule.materials.batteryblock.BatteryBlock;
+import com.volumetricpixels.testmodule.materials.battery.BatteryBlock;
+import com.volumetricpixels.testmodule.materials.capacitor.CapacitorBlock;
 import com.volumetricpixels.testmodule.materials.windmill.WindmillBlock;
 import com.volumetricpixels.testmodule.materials.wire.WireBlock;
 import java.lang.reflect.Field;
@@ -16,6 +17,7 @@ public class TestMaterials {
     public static final WindmillBlock WINDMILL_BLOCK = new WindmillBlock("Windmill");
     public static final BatteryBlock BATTERY_BLOCK = new BatteryBlock("Battery");
     public static final WireBlock WIRE_BLOCK = new WireBlock("Wire");
+    public static final CapacitorBlock CAPACITOR_BLOCK = new CapacitorBlock("Capacitor");
     
     public static void initialise() {
         try {
