@@ -49,12 +49,9 @@ public abstract class TestBlockMaterial extends BlockMaterial implements Complex
     }
 
     @Override
-    public boolean onPlacement(Block block, short data, BlockFace against, Vector3 clickedPos, boolean isClickedBlock, Cause<?> cause) {
-        if (super.onPlacement(block, data, against, clickedPos, isClickedBlock, cause)) {
-            spawn(block.getPosition());
-            return true;
-        }
-        return false;
+    public void onCreate(Block block, short data, Cause<?> cause) {
+        super.onCreate(block, data, cause);
+        spawn(block.getPosition());
     }
 
     @Override
