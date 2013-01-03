@@ -1,6 +1,7 @@
 package com.volumetricpixels.testmodule;
 
-import com.volumetricpixels.testmodule.materials.TestBlockMaterial;
+import com.volumetricpixels.testmodule.materials.Initializable;
+import com.volumetricpixels.testmodule.materials.MultipleComponentTestBlockMaterial;
 import com.volumetricpixels.testmodule.materials.battery.BatteryBlock;
 import com.volumetricpixels.testmodule.materials.capacitor.CapacitorBlock;
 import com.volumetricpixels.testmodule.materials.windmill.WindmillBlock;
@@ -23,8 +24,8 @@ public class TestMaterials {
             for (Field field : TestMaterials.class.getFields()) {
                 if ((field.getModifiers() & (Modifier.STATIC | Modifier.PUBLIC)) > 0) {
                     Object temp = field.get(null);
-                    if (TestBlockMaterial.class.isAssignableFrom(field.getClass())) {
-                        TestBlockMaterial mat = (TestBlockMaterial) temp;
+                    if (Initializable.class.isAssignableFrom(field.getClass())) {
+                        Initializable mat = (Initializable) temp;
                         mat.initialise();
                     }
                 }

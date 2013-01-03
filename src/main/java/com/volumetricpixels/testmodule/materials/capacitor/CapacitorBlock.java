@@ -1,12 +1,12 @@
 package com.volumetricpixels.testmodule.materials.capacitor;
 
 import com.volumetricpixels.testmodule.TestMaterials;
-import com.volumetricpixels.testmodule.materials.TestBlockMaterial;
+import com.volumetricpixels.testmodule.materials.SingleComponentTestBlockMaterial;
 import org.spout.api.Spout;
 import org.spout.api.inventory.recipe.RecipeBuilder;
 import org.spout.vanilla.material.VanillaMaterials;
 
-public class CapacitorBlock extends TestBlockMaterial {
+public class CapacitorBlock extends SingleComponentTestBlockMaterial {
 
     public CapacitorBlock(String name) {
         super(name, Capacitor.class, "model://Vanilla/materials/block/solid/furnace/furnace.spm");

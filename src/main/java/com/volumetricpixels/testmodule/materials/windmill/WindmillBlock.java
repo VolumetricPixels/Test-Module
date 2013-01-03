@@ -1,12 +1,12 @@
 package com.volumetricpixels.testmodule.materials.windmill;
 
 import com.volumetricpixels.testmodule.TestMaterials;
-import com.volumetricpixels.testmodule.materials.TestBlockMaterial;
+import com.volumetricpixels.testmodule.materials.SingleComponentTestBlockMaterial;
 import org.spout.api.Spout;
 import org.spout.api.inventory.recipe.RecipeBuilder;
 import org.spout.vanilla.material.VanillaMaterials;
 
-public class WindmillBlock extends TestBlockMaterial {
+public class WindmillBlock extends SingleComponentTestBlockMaterial {
 
     public WindmillBlock(String name) {
         super(name, Windmill.class, "model://Vanilla/materials/block/solid/furnace/furnace.spm");

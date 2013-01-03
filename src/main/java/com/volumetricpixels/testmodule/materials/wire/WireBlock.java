@@ -1,13 +1,13 @@
 package com.volumetricpixels.testmodule.materials.wire;
 
 import com.volumetricpixels.testmodule.TestMaterials;
-import com.volumetricpixels.testmodule.materials.TestBlockMaterial;
+import com.volumetricpixels.testmodule.materials.SingleComponentTestBlockMaterial;
 import com.volumetricpixels.testmodule.materials.windmill.Windmill;
 import org.spout.api.Spout;
 import org.spout.api.inventory.recipe.RecipeBuilder;
 import org.spout.vanilla.material.VanillaMaterials;
 
-public class WireBlock extends TestBlockMaterial {
+public class WireBlock extends SingleComponentTestBlockMaterial {
 
     public WireBlock(String name) {
         super(name, Windmill.class, "model://Vanilla/materials/block/solid/brownwool/brownwool.spm");
