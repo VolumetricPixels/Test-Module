@@ -1,11 +1,11 @@
 package com.volumetricpixels.testmodule.materials;
 
-import com.volumetricpixels.mcsquared.BlockEntityMaterial;
+import com.volumetricpixels.mcsquared.material.MultipleComponentMaterial;
 import java.util.List;
 import org.spout.api.component.type.BlockComponent;
 import org.spout.api.material.Material;
 
-public abstract class MultipleComponentTestBlockMaterial extends BlockEntityMaterial implements Initializable {
+public abstract class MultipleComponentTestBlockMaterial extends MultipleComponentMaterial implements Initializable {
 
     public MultipleComponentTestBlockMaterial(String name, List<Class<? extends BlockComponent>> component, String model) {
         super(name, component, model);
