@@ -11,20 +11,26 @@ public class TestModule extends CommonPlugin {
 
     @Override
     public void onDisable() {
-        getLogger().info("Test-Module Disabled.");
+        getLogger().info("Disabled.");
+    }
+
+    @Override
+    public void onLoad() {
+        TestMaterials.initialise();
+        getLogger().info("Loaded");
     }
 
     @Override
     public void onEnable() {
-
         TMExecutor t = new TMExecutor();
+        getEngine().getRootCommand().addSubCommand(this, "+battery").setArgBounds(0, 0).setExecutor(Platform.CLIENT, t);
         getEngine().getRootCommand().addSubCommand(this, "+windmill").setArgBounds(0, 0).setExecutor(Platform.CLIENT, t);
 
         if (Spout.getPlatform() == Platform.CLIENT) {
             InputManager input = ((Client) Spout.getEngine()).getInputManager();
-            input.bind(Keyboard.KEY_B, "windmill");
+            input.bind(Keyboard.KEY_B, "battery");
+            input.bind(Keyboard.KEY_N, "windmill");
         }
-        TestMaterials.initialise();
-        getLogger().info("Test-Module Enabled.");
+        getLogger().info("Enabled.");
     }
 }

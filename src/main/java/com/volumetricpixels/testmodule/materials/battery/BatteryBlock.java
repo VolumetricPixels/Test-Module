@@ -9,7 +9,7 @@ import org.spout.vanilla.material.VanillaMaterials;
 public class BatteryBlock extends SingleComponentTestBlockMaterial {
 
     public BatteryBlock(String name) {
-        super(name, Battery.class, "model://Test-Module/materials/block/solid/baterry/battery.spm");
+        super(name, Battery.class, "model://Test-Module/materials/block/solid/battery/battery.spm");
     }
 
     @Override

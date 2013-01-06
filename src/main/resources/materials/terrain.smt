@@ -1,4 +1,4 @@
-Shader: shader://Test-Module/shaders/terrain.ssf
+Shader: shader://Vanilla/shaders/terrain.ssf
 
 MaterialParams:
     Diffuse: texture://Test-Module/terrain.png

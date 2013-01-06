@@ -8,6 +8,7 @@ import org.spout.api.component.impl.HitBlockComponent;
 import org.spout.api.entity.Player;
 import org.spout.api.exception.CommandException;
 import org.spout.api.geo.cuboid.Block;
+import org.spout.api.material.BlockMaterial;
 
 public class TMExecutor implements CommandExecutor {
 
@@ -16,14 +17,21 @@ public class TMExecutor implements CommandExecutor {
         String name = command.getPreferredName();
         if (source instanceof Player) {
             Player p = (Player) source;
-            if (name.equalsIgnoreCase("+windmill")) {
+            BlockMaterial mat;
+            if (name.equalsIgnoreCase("+battery")) {
+                p.sendMessage("Battery command has been executed");
+                mat = TestMaterials.BATTERY_BLOCK;
+            } else if (name.equalsIgnoreCase("+windmill")) {
                 p.sendMessage("Windmill command has been executed");
-                HitBlockComponent hit = p.get(HitBlockComponent.class);
-                if (hit != null) {
-                    Block b = hit.getTargetBlock();
-                    b.setMaterial(TestMaterials.WINDMILL_BLOCK);
-                    p.sendMessage("Block at ", b.getPosition(), " has been set to a 'Windmill'");
-                }
+                mat = TestMaterials.WINDMILL_BLOCK;
+            } else {
+                mat = BlockMaterial.AIR;
+            }
+            HitBlockComponent hit = p.get(HitBlockComponent.class);
+            if (hit != null) {
+                Block b = hit.getTargetBlock();
+                b.setMaterial(mat);
+                p.sendMessage("Block at ", b.getPosition(), " has been set to " + mat.getDisplayName());
             }
         }
     }
