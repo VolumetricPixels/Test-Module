@@ -6,23 +6,24 @@ import com.volumetricpixels.mcsquared.api.energy.EnergyNode;
 import com.volumetricpixels.mcsquared.api.energy.EnergyReceiver;
 import com.volumetricpixels.mcsquared.api.energy.EnergySource;
 import com.volumetricpixels.mcsquared.api.energy.MaxEnergyAccess;
-import com.volumetricpixels.mcsquared.api.energy.impl.EnergyHolderImpl;
+import com.volumetricpixels.mcsquared.api.energy.electricity.Electricity;
+import com.volumetricpixels.mcsquared.api.energy.electricity.ElectricityHolderImpl;
 import com.volumetricpixels.mcsquared.api.utils.EnergyUtils;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Capacitor extends EnergyHolderImpl implements EnergyHolder, EnergyReceiver, EnergySource, MaxEnergyAccess {
+public class Capacitor extends ElectricityHolderImpl implements EnergyHolder<Electricity>, EnergyReceiver<Electricity>, EnergySource<Electricity>, MaxEnergyAccess<Electricity> {
 
-    private final Set<EnergyReceiver> receivers = new HashSet<EnergyReceiver>();
+    private final Set<EnergyReceiver<Electricity>> receivers = new HashSet<EnergyReceiver<Electricity>>();
 
     @Override
-    public Energy getMaxEnergy() {
+    public Electricity getMaxEnergy() {
         return maxEnergy;
     }
 
     @Override
-    public void setMaxEnergy(Energy maxEnergy) {
+    public void setMaxEnergy(Electricity maxEnergy) {
         this.maxEnergy = maxEnergy;
     }
 
@@ -31,21 +32,21 @@ public class Capacitor extends EnergyHolderImpl implements EnergyHolder, EnergyR
         if (receivers.isEmpty()) {
             return;
         }
-        this.energyHeld = EnergyUtils.safeSplit(this, energyHeld, new HashSet<EnergyNode>(Arrays.asList(this)), receivers);
+        this.energyHeld = EnergyUtils.safeSplit(this, energyHeld, new HashSet<EnergyNode<Electricity>>(Arrays.asList(this)), receivers);
     }
 
     @Override
-    public Energy onReceive(EnergySource source, Set<EnergyNode> visited, Energy energy) {
+    public Electricity onReceive(EnergySource<Electricity> source, Set<EnergyNode<Electricity>> visited, Electricity energy) {
         return addEnergy(energy);
     }
 
     @Override
-    public void addReceiver(EnergyReceiver receiver) {
+    public void addReceiver(EnergyReceiver<Electricity> receiver) {
         receivers.add(receiver);
     }
 
     @Override
-    public void removeReceiver(EnergyReceiver receiver) {
+    public void removeReceiver(EnergyReceiver<Electricity> receiver) {
         receivers.remove(receiver);
     }
 }

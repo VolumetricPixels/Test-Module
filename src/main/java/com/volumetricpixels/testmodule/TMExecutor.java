@@ -4,7 +4,7 @@ import org.spout.api.command.Command;
 import org.spout.api.command.CommandContext;
 import org.spout.api.command.CommandExecutor;
 import org.spout.api.command.CommandSource;
-import org.spout.api.component.impl.HitBlockComponent;
+import org.spout.api.component.impl.InteractComponent;
 import org.spout.api.entity.Player;
 import org.spout.api.exception.CommandException;
 import org.spout.api.geo.cuboid.Block;
@@ -27,7 +27,7 @@ public class TMExecutor implements CommandExecutor {
             } else {
                 mat = BlockMaterial.AIR;
             }
-            HitBlockComponent hit = p.get(HitBlockComponent.class);
+            InteractComponent hit = p.get(InteractComponent.class);
             if (hit != null) {
                 Block b = hit.getTargetBlock();
                 b.setMaterial(mat);

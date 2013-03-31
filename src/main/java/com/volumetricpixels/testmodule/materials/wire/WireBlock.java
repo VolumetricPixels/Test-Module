@@ -5,7 +5,7 @@ import com.volumetricpixels.testmodule.materials.SingleComponentTestBlockMateria
 import com.volumetricpixels.testmodule.materials.windmill.Windmill;
 import org.spout.api.Spout;
 import org.spout.api.inventory.recipe.RecipeBuilder;
-import org.spout.vanilla.material.VanillaMaterials;
+import org.spout.vanilla.plugin.material.VanillaMaterials;
 
 public class WireBlock extends SingleComponentTestBlockMaterial {
 

@@ -6,7 +6,7 @@ import org.spout.api.Spout;
 import org.spout.api.component.type.BlockComponent;
 import org.spout.api.material.Material;
 import org.spout.api.plugin.Platform;
-import org.spout.vanilla.render.VanillaEffects;
+import org.spout.vanilla.plugin.render.VanillaEffects;
 
 public abstract class MultipleComponentTestBlockMaterial extends MultipleComponentMaterial implements Initializable {
 
