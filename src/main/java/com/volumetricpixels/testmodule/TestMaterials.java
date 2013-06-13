@@ -1,7 +1,6 @@
 package com.volumetricpixels.testmodule;
 
 import com.volumetricpixels.testmodule.materials.Initializable;
-import com.volumetricpixels.testmodule.materials.MultipleComponentTestBlockMaterial;
 import com.volumetricpixels.testmodule.materials.battery.BatteryBlock;
 import com.volumetricpixels.testmodule.materials.capacitor.CapacitorBlock;
 import com.volumetricpixels.testmodule.materials.windmill.WindmillBlock;
