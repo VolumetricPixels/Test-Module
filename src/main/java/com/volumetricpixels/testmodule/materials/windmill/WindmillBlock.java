@@ -4,7 +4,7 @@ import com.volumetricpixels.testmodule.TestMaterials;
 import com.volumetricpixels.testmodule.materials.TestBlockMaterial;
 import org.spout.api.Spout;
 import org.spout.api.inventory.recipe.RecipeBuilder;
-import org.spout.vanilla.plugin.material.VanillaMaterials;
+import org.spout.vanilla.material.VanillaMaterials;
 
 public class WindmillBlock extends TestBlockMaterial {
 

@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<url>http://www.volumetricpixels.com</url>
 	<inceptionYear>2012</inceptionYear>
-	<description>MC2 test.</description>
+	<description>MCSquared test module</description>
   
 	<!-- Properties -->
 	<properties>
@@ -38,24 +38,13 @@
 			<url>http://repo.spout.org/</url>
 		</repository>
 	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spout-plugins</id>
-			<url>http://repo.spout.org/</url>
-		</pluginRepository>
-	</pluginRepositories>
   
 	<!-- Dependencies -->
 	<dependencies>
 		<dependency>
 			<groupId>org.spout</groupId>
-			<artifactId>spoutapi</artifactId>
-			<version>dev-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.spout</groupId>
 			<artifactId>vanilla</artifactId>
-			<version>1.4.6-SNAPSHOT</version>
+			<version>1.5.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.volumetricpixels</groupId>
