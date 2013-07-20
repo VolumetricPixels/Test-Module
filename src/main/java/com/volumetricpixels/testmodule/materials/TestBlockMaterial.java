@@ -9,28 +9,27 @@ import org.spout.vanilla.plugin.render.VanillaEffects;
 
 public abstract class TestBlockMaterial extends BlockMaterial implements Initializable {
 
-    @SuppressWarnings("unchecked")
-    public TestBlockMaterial(String name, String model, Class<? extends BlockComponent>... component) {
-        super((short) 0, name, model, component);
-        if (Spout.getEngine().getPlatform() == Platform.CLIENT) {
+	@SuppressWarnings("unchecked")
+	public TestBlockMaterial(String name, String model, Class<? extends BlockComponent>... component) {
+		super((short) 0, name, model, component);
+		if (Spout.getEngine().getPlatform() == Platform.CLIENT) {
 			if (!getModel().getRenderMaterial().getRenderEffects().contains(VanillaEffects.SKY_TIME)) {
 				getModel().getRenderMaterial().addRenderEffect(VanillaEffects.SKY_TIME);
 				getModel().getRenderMaterial().addBufferEffect(VanillaEffects.LIGHTING);
 			}
 		}
-    }
+	}
 
-    @SuppressWarnings("unchecked")
-    public TestBlockMaterial(String name, int data, Material parent, String model, Class<? extends BlockComponent> component) {
-        super(name, data, parent, model, component);
-        if (Spout.getEngine().getPlatform() == Platform.CLIENT) {
+	@SuppressWarnings("unchecked")
+	public TestBlockMaterial(String name, int data, Material parent, String model, Class<? extends BlockComponent> component) {
+		super(name, data, parent, model, component);
+		if (Spout.getEngine().getPlatform() == Platform.CLIENT) {
 			if (!getModel().getRenderMaterial().getRenderEffects().contains(VanillaEffects.SKY_TIME)) {
 				getModel().getRenderMaterial().addRenderEffect(VanillaEffects.SKY_TIME);
 				getModel().getRenderMaterial().addBufferEffect(VanillaEffects.LIGHTING);
 			}
 		}
-    }
+	}
 
-    public abstract void initialise();
-
+	public abstract void initialise();
 }

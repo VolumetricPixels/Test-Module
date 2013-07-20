@@ -11,26 +11,26 @@ import org.spout.api.Spout;
 
 public class TestMaterials {
 
-    private TestMaterials() {
-    }
-    public static final WindmillBlock WINDMILL_BLOCK = new WindmillBlock("Windmill");
-    public static final BatteryBlock BATTERY_BLOCK = new BatteryBlock("Battery");
-    public static final WireBlock WIRE_BLOCK = new WireBlock("Wire");
-    public static final CapacitorBlock CAPACITOR_BLOCK = new CapacitorBlock("Capacitor");
+	private TestMaterials() {
+	}
+	public static final WindmillBlock WINDMILL_BLOCK = new WindmillBlock("Windmill");
+	public static final BatteryBlock BATTERY_BLOCK = new BatteryBlock("Battery");
+	public static final WireBlock WIRE_BLOCK = new WireBlock("Wire");
+	public static final CapacitorBlock CAPACITOR_BLOCK = new CapacitorBlock("Capacitor");
 
-    public static void initialise() {
-        try {
-            for (Field field : TestMaterials.class.getFields()) {
-                if ((field.getModifiers() & (Modifier.STATIC | Modifier.PUBLIC)) > 0) {
-                    Object temp = field.get(null);
-                    if (Initializable.class.isAssignableFrom(field.getClass())) {
-                        Initializable mat = (Initializable) temp;
-                        mat.initialise();
-                    }
-                }
-            }
-        } catch (Exception ex) {
-            Spout.getLogger().severe("Failed to initialise TestModule recipes!");
-        }
-    }
+	public static void initialise() {
+		try {
+			for (Field field : TestMaterials.class.getFields()) {
+				if ((field.getModifiers() & (Modifier.STATIC | Modifier.PUBLIC)) > 0) {
+					Object temp = field.get(null);
+					if (Initializable.class.isAssignableFrom(field.getClass())) {
+						Initializable mat = (Initializable) temp;
+						mat.initialise();
+					}
+				}
+			}
+		} catch (Exception ex) {
+			Spout.getLogger().severe("Failed to initialise TestModule recipes!");
+		}
+	}
 }

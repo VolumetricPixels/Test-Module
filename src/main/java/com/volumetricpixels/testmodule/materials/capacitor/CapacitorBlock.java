@@ -8,15 +8,15 @@ import org.spout.vanilla.plugin.material.VanillaMaterials;
 
 public class CapacitorBlock extends TestBlockMaterial {
 
-    public CapacitorBlock(String name) {
-        super(name, "model://Vanilla/materials/block/solid/furnace/furnace.spm", Capacitor.class);
-    }
+	public CapacitorBlock(String name) {
+		super(name, "model://Vanilla/materials/block/solid/furnace/furnace.spm", Capacitor.class);
+	}
 
-    @Override
-    public void initialise() {
-        RecipeBuilder builder = new RecipeBuilder();
-        builder.setResult(TestMaterials.BATTERY_BLOCK, 1);
-        builder.addIngredient(VanillaMaterials.BEDROCK);
-        Spout.getEngine().getRecipeManager().register(builder.buildShapelessRecipe());
-    }
+	@Override
+	public void initialise() {
+		RecipeBuilder builder = new RecipeBuilder();
+		builder.setResult(TestMaterials.BATTERY_BLOCK, 1);
+		builder.addIngredient(VanillaMaterials.BEDROCK);
+		Spout.getEngine().getRecipeManager().register(builder.buildShapelessRecipe());
+	}
 }
